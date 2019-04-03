@@ -1,16 +1,16 @@
 <template>
   <div class="container">
-    <SideBar />
+    <BasicLayout />
   </div>
 </template>
 
 <script>
-import SideBar from '@/components/SideBar';
+import BasicLayout from '@/layouts/BasicLayout';
 
 export default {
   name: 'login',
   components: {
-    SideBar,
+    BasicLayout,
   },
   data() {
     return {
