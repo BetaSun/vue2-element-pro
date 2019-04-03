@@ -10,7 +10,7 @@
 // import variables from '@/styles/variables.scss'
 
 export default {
-  name: 'SideBar',
+  name: 'Menu',
   // components: { SidebarItem },
   // computed: {
   //   ...mapGetters([
