@@ -1,18 +1,17 @@
 <template>
-  <el-container :class="container">
-    <el-aside :class="aside" :width="asideWidth">Aside</el-aside>
-    <el-container :class="wrapper" direction="vertical">
-      <Header />
-      <el-main :class="main">Main</el-main>
+  <el-container class="container">
+    <el-aside class="aside" :width="asideWidth">Aside</el-aside>
+    <el-container class="wrapper" direction="vertical">
+      <Header :expanded="expanded" @toggle="toggleMenu" />
+      <el-main class="main">Main</el-main>
       <Footer />
     </el-container>
   </el-container>
 </template>
 
 <script>
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { classNamePrefixer } from '@/utils/utils';
+import Header from './Header';
+import Footer from './Footer';
 
 export default {
   name: 'BasicLayout',
@@ -22,17 +21,19 @@ export default {
   },
   data() {
     return {
-      asideWidth: '210px',
       collapsed: false,
+      expanded: true, // 菜单是否展开
     };
   },
   computed: {
-    ...classNamePrefixer([
-      'container',
-      'aside',
-      'wrapper',
-      'main',
-    ]),
+    asideWidth() {
+      return this.expanded ? '210px' : '50px'
+    },
+  },
+  methods: {
+    toggleMenu() {
+      this.expanded = !this.expanded;
+    },
   },
   created() {
     console.log(this);
@@ -41,21 +42,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$namespace: 'BasicLayout';
+.container {
+  height: 100%;
 
-.#{$namespace} {
-  &-container {
-    height: 100%;
-  }
-
-  &-aside {
+  .aside {
     background-color: #222d32;
+    transition: width 0.3s;
   }
 
-  &-wrapper {
+  .wrapper {
     background-color: #f0f2f5;
   }
 }
+
 </style>
 
 

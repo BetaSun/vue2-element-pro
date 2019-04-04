@@ -1,6 +1,7 @@
 {
   "name": "vue2-element-pro",
   "version": "0.1.0",
+  "description": "admin based on vue2 and element",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -11,7 +12,9 @@
     "inspect": "vue-cli-service inspect > inspect.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "element-ui": "^2.4.5",
+    "fuse.js": "^3.4.4",
     "js-cookie": "^2.2.0",
     "normalize.css": "^8.0.1",
     "vue": "^2.6.6",
@@ -22,7 +25,6 @@
     "@vue/cli-plugin-babel": "^3.5.0",
     "@vue/cli-plugin-eslint": "^3.5.0",
     "@vue/cli-service": "^3.5.0",
-    "axios": "^0.18.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
@@ -41,6 +43,11 @@
       "autoprefixer": {}
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BetaSun/vue2-element-pro.git"
+  },
+  "homepage": "https://github.com/BetaSun/vue2-element-pro#readme",
   "browserslist": [
     "> 1%",
     "last 2 versions",
